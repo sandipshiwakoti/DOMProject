@@ -1,0 +1,140 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* css variables */
+:root {
+    --primaryColor: rgb(75, 85, 223);
+    --secondaryColor: rgb(14, 199, 69);
+    --darkColor: #000;
+}
+
+/* body */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* global styles */
+.section {
+    padding: 4rem 0;
+}
+
+.section-center {
+    width: 80vw;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+/* features section */
+
+/* features title */
+.features-title {
+    text-align: center;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+.features-title::after {
+    content: "";
+    width: 5rem;
+    height: .2rem;
+    margin: 0 auto;
+    background-color: var(--primaryColor);
+    display: block;
+    margin-top: .2rem;
+}
+
+/* feature btns */
+.feature-btns {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+.feature-btn {
+    margin-left: 1rem;
+    padding: .3rem .7rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--primaryColor);
+    border-radius: .5rem;
+    border: 0.2rem solid var(--primaryColor);
+    outline: none;
+    text-transform: capitalize;
+}
+
+.feature-btn:hover {
+    background-color: transparent;
+    color: var(--primaryColor);
+}
+
+/* feature cards */
+.feature-card {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.feature-img-container {
+    height: 200px;
+    border: .4rem solid var(--primaryColor);
+    border-radius: .3rem;
+    margin-bottom: 2rem;
+}
+
+.feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-title {
+    letter-spacing: .1rem;
+}
+
+.feature-title::after {
+    content: "";
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--secondaryColor);
+    display: block;
+    margin: .5rem 0 1rem;
+}
+
+.feature-info {
+    line-height: 1.2rem;
+    text-align: justify;
+    font-weight: 400;
+    padding-bottom: 2rem;
+}
+
+/* responsive */
+@media screen and (min-width: 568px) {
+    .feature-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 800px;
+    }
+
+    .feature-img-container {
+        flex: 0 0 40%;
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .features-center {
+        width: 90vw;
+    }
+
+    .feature-cards {
+        display: grid;
+        place-content: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}

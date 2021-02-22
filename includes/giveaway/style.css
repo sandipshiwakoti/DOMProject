@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.section-center {
+    width: 85vw;
+    max-width: 1170px;
+    margin: 2rem auto;
+}
+
+/* svg container */
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-giveaway {
+    width: 200px;
+    height: 200px;
+}
+
+/* giveaway item */
+.giveaway-img-container {
+    /* border: 0.3rem solid rgb(137, 240, 116); */
+    border-radius: .3rem;
+}
+
+.giveaway-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.giveaway-title {
+    text-transform: uppercase;
+    color: rgb(38, 22, 128);
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-top: 1rem;
+}
+
+.giveaway-subtitle {
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+    letter-spacing: .2rem;
+    font-weight: 750;
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+.giveaway-desc {
+    line-height: 1.4rem;
+    margin-top: 1rem;
+}
+
+.giveaway-time {
+    display: flex;
+}
+
+.remaining-time {
+    font-size: .9rem;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: rgb(18, 21, 26);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem;
+    margin: 1rem 1rem 1rem 0;
+    border-radius: .3rem;
+}
+
+.remaining-time>span {
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding-bottom: .5rem;
+}
+
+/* responsive */
+@media screen and (min-width: 768px) {
+    .giveaway-item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .giveaway-img-container,
+    .giveaway-info {
+        flex: 0 0 calc(50% - 2rem);
+    }
+}

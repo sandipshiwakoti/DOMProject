@@ -1,0 +1,237 @@
+/* resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-50deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+}
+
+/* global variables */
+
+/* global styles */
+.section {
+    padding: 10rem 0;
+}
+
+.section-center {
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* shopping list section */
+.shopping-center,
+.confirmation-box {
+    background-color: #fff;
+    padding: 2rem;
+    max-width: 35rem;
+    box-shadow: 1px 2px 12px -4px rgba(0, 0, 0, 0.75);
+    border-radius: .5rem;
+}
+
+.form-message {
+    text-align: center;
+    margin-bottom: .5rem;
+    background-color: rgb(240, 226, 226);
+    border-radius: .5rem;
+    padding: .3rem 0;
+    color: green;
+    font-size: 1rem;
+    font-weight: 600;
+    visibility: hidden;
+}
+
+.show-form-message {
+    visibility: visible;
+}
+
+.shopping-title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.shopping-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+input.input-item {
+    background-color: rgb(253, 214, 214);
+    font-size: 1.2rem;
+    border-radius: .5rem;
+    padding: .5rem .5rem;
+    flex: 1 1 auto;
+    margin-right: .5rem;
+    width: 50%;
+}
+
+input.input-item::placeholder {
+    color: rgb(114, 97, 97);
+}
+
+button.btn-add {
+    /* flex: 0 0 20%; */
+    text-transform: capitalize;
+    background-color: rgb(103, 104, 175);
+    color: #fff;
+    padding: .5rem 1rem;
+    font-weight: 700;
+    border-radius: .5rem;
+}
+
+button.btn-add:hover {
+    opacity: .8;
+}
+
+.shopping-item {
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 1rem;
+    background-color: rgb(240, 226, 226);
+    border-radius: .5rem;
+    font-size: 1.5rem;
+}
+
+.item-title {
+    font-weight: 520;
+}
+.btn-container > button {
+    font-size: 1rem;
+}
+
+.btn-container>button:hover {
+    color: rgb(103, 104, 175);
+}
+
+button.btn-edit {
+    margin-right: .5rem;
+}
+
+button.btn-clear {
+    color: red;
+    font-weight: 550;
+    background-color: transparent;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+/* confirmation-box */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -69;
+}
+
+.show-overlay {
+    background-color: black;
+    opacity: .8;
+    z-index: 69;
+}
+
+.confirmation-box {
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.show-confirmation-box {
+    visibility: visible;
+    pointer-events: all;
+    z-index: 70;
+}
+
+.confirmation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    padding: 1rem 2rem;
+}
+
+.confirmation-title {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+.confirmation-header>.btn-cancel {
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.confirmation-header>.btn-cancel:hover {
+    color: rgb(103, 104, 175);
+}
+
+.confirmation-message {
+    text-transform: lowercase;
+    padding: 1.5rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.confirmation-message::first-letter {
+    text-transform: uppercase;
+}
+
+.btns-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns-confirm>button {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    border-radius: .2rem;
+    padding: .3rem 0;
+    flex: 0 0 50%;
+}
+
+.btns-confirm>button:hover {
+    opacity: .8;
+}
+
+.btns-confirm>.btn-cancel {
+    background-color: aqua;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: rgb(248, 46, 46);
+}

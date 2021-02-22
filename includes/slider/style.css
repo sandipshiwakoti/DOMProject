@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(255, 239, 219);
+}
+
+/* global styles */
+.section {
+    padding: 4rem 0;
+}
+
+.section-center {
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: "";
+    width: 5rem;
+    height: .3rem;
+    display: block;
+    background-color: rgb(95, 95, 190);
+    margin: .3rem auto;
+}
+
+/* slider section */
+.slide-container {
+    position: relative;
+    width: 85vw;
+    height: 45vh;
+    max-width: 60rem;
+    border: .2rem solid rgb(95, 95, 190);
+    border-radius: .2rem;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all .1s linear;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-container>button {
+    text-transform: capitalize;
+    font-size: .8rem;
+    font-weight: 600;
+    background-color: blueviolet;
+    color: white;
+    padding: .2rem .7rem;
+    margin-top: 1rem;
+    margin-right: .5rem;
+    border-radius: .3rem;
+}
+
+/* disable button */
+.disable-btn {
+    cursor: not-allowed;
+    background-color: red !important;
+}
+
+/* responsive */
+@media screen and (min-width: 768px) {
+    .slide-container {
+        height: 55vh;
+    }
+}
+
+@media screen and (min-width: 972px) {
+    .slide-container {
+        width: 100%;
+        height: 60vh;
+    }
+}
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <title>Shopping List</title>
+</head>
+<body>
+    <section id="shopping-list" class="section">
+        <div class="shopping-center section-center">
+            <p class="form-message">Items added</p>
+            <h1 class="shopping-title">shopping-list</h1>
+            <form class="shopping-form">
+                <input type="text" name="input-item" class="input-item" placeholder="Enter an item">
+                <button type="submit" class="btn-add">add</button>
+            </form>
+            <div class="shopping-items"></div>
+            <button class="btn-clear show">Clear Items</button>
+        </div>
+        <div class="overlay">
+        </div>
+        <div class="confirmation-box">
+            <div class="confirmation-header">
+                <h1 class="confirmation-title">delete <span>item</span></h1>
+                <button class="btn-cancel"><i class="fas fa-times"></i></button>
+            </div>
+            <p class="confirmation-message">
+                are you sure you want to delete <span>item</span>?
+            </p>
+            <div class="btns-confirm">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-delete">Delete</button>
+            </div>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>

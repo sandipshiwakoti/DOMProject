@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0, 0, 0, 0.3)), url("https://images.pexels.com/photos/5474295/pexels-photo-5474295.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner,
+.popup-box {
+    background-color: #fff;
+    width: 25rem;
+    text-align: center;
+    padding: 5rem;
+    border-radius: 1rem;
+}
+
+#btn-open {
+    margin-top: 2rem;
+    background-color: coral;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    padding: .5rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: .3s linear;
+}
+
+#btn-open:hover {
+    background-color: transparent;
+    color: coral;
+    border: 0.2rem solid coral;
+}
+
+.popup-box {
+    width: 30rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.popup-box>p {
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+#btn-close {
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    transition: .2s linear;
+    background-color: transparent;
+}
+
+#btn-close:hover {
+    transform: scale(1.2);
+}
