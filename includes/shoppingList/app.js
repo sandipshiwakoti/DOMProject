@@ -23,7 +23,7 @@ const reset = () => {
     const itemTexts = document.querySelectorAll(".confirmation-box span");
     itemTexts.forEach(text => {
         text.textContent = "item";
-    })
+    });
 }
 
 const editItem = (e) => {
@@ -41,17 +41,19 @@ const removeItem = (e) => {
     overlay.classList.add("show-overlay");
     const item = e.currentTarget.parentElement.parentElement;
     let btnDelete = document.querySelector(".btn-delete");
-    btnDelete.addEventListener("click", function deleteOperation(){
-        shoppingItems.removeChild(item);
-        if(shoppingItems.childElementCount == 0){
-            btnClear.style.display = "none";
+    btnDelete.value = "deleteOneItem";
+    btnDelete.addEventListener("click", () => {
+        if(btnDelete.value === "deleteOneItem"){
+            shoppingItems.removeChild(item);
+            displayMsg("Item removed from shopping list", "danger");
+            const id = item.dataset.id;
+            removeFromLocalStorage(id);
+            box.classList.remove("show-confirmation-box");
+            overlay.classList.remove("show-overlay");
+             if(shoppingItems.childElementCount == 0){
+                btnClear.style.display = "none";
+            }
         }
-        displayMsg("Item removed from shopping list", "danger");
-        const id = item.dataset.id;
-        removeFromLocalStorage(id);
-        box.classList.remove("show-confirmation-box");
-        overlay.classList.remove("show-overlay");
-        btnDelete.removeEventListener("click", deleteOperation);
     });
 
     reset();
@@ -92,19 +94,21 @@ const clearItems = () => {
     box.classList.add("show-confirmation-box");
     overlay.classList.add("show-overlay");
     let btnDelete = document.querySelector(".btn-delete");
-    btnDelete.addEventListener("click", function deleteOperation(){
-        const items = document.querySelectorAll(".shopping-item");
+    btnDelete.value = "deleteAllItem";
+    btnDelete.addEventListener("click", () => {
+        if(btnDelete.value === "deleteAllItem"){
+            const items = document.querySelectorAll(".shopping-item");
 
-        items.forEach(item => {
-            shoppingItems.removeChild(item);
-        });
+            items.forEach(item => {
+                shoppingItems.removeChild(item);
+            });
 
-        btnClear.style.display = "none";
-        displayMsg("All items has been cleared", "success");
-        localStorage.removeItem("list");
-        box.classList.remove("show-confirmation-box");
-        overlay.classList.remove("show-overlay");
-        btnDelete.removeEventListener("click", deleteOperation);
+            btnClear.style.display = "none";
+            displayMsg("All items has been cleared", "success");
+            localStorage.removeItem("list");
+            box.classList.remove("show-confirmation-box");
+            overlay.classList.remove("show-overlay");
+        }
     });
 }
 
@@ -186,6 +190,15 @@ const loadItem = (id, value) => {
     });
 
     btnClear.addEventListener("click", clearItems);
+
+    btnsCancel.forEach(btnCancel => {
+    btnCancel.addEventListener("click", (e) => {
+        e.preventDefault();
+        box.classList.remove("show-confirmation-box");
+        overlay.classList.remove("show-overlay");
+        reset();
+    })
+});
 }
 
 window.addEventListener("DOMContentLoaded", (e) => {
@@ -196,10 +209,5 @@ window.addEventListener("DOMContentLoaded", (e) => {
 });
 
 // confirmation box
-btnsCancel.forEach(btnCancel => {
-    btnCancel.addEventListener("click", () => {
-        box.classList.remove("show-confirmation-box");
-        overlay.classList.remove("show-overlay");
-    })
-});
+
 
